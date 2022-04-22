@@ -1,0 +1,7 @@
+<% @lists.each do |article| %>
+    <h2><%= link_to list.name, list_path(list) %></h2>
+<% end %>
+<%# <%= simple_form_for(@lists, @bookmarks) do |f| %>
+  <%# <%= f.text_field :name %>
+  <%# <%= f.text_area :content, data: { editor: 'markdown' }, rows: 10 %>
+  <%# <%= f.submit %> %>
