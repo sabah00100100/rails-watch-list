@@ -1,7 +1,9 @@
-<% @lists.each do |article| %>
-    <h2><%= link_to list.name, list_path(list) %></h2>
-<% end %>
-<%# <%= simple_form_for(@lists, @bookmarks) do |f| %>
-  <%# <%= f.text_field :name %>
-  <%# <%= f.text_area :content, data: { editor: 'markdown' }, rows: 10 %>
-  <%# <%= f.submit %> %>
+<h1>Create a new list</h1>
+<%= link_to 'New', new_list_path %>
+
+<h2>ALL LISTS</h2>
+<% @lists.each do |list| %>
+        <%= link_to list_path(list), class: "text-decoration-none" do %>
+          <%= list.name %>
+        <% end %>
+    <% end %>
