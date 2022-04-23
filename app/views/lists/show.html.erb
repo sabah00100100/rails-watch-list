@@ -4,8 +4,8 @@
       <%# <% bookmark = Bookmark.find_by(list: @list, movie: @movie) %>
     <%# <% end  why does he do it like this ? Bookmark.find_by !!!%>
 <% @list.bookmarks.each do |bookmark| %>
- <%= bookmark.movie.title %>
- <% end %>
+  <%= image_tag bookmark.movie.poster_url, alt: bookmark.movie.title, class: "movie-img rounded-top" %>
+<% end %>
 
 <%= link_to 'lists', lists_path %> -
   <%= link_to 'Leave a bookmark', new_list_bookmark_path(@list) %> -
