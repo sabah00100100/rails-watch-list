@@ -1,9 +1,24 @@
-<h1>Create a new list</h1>
-<%= link_to 'New', new_list_path %>
+<div class="container p-5">
+  <div class="row">
+    <div class="col-3 pt-3 text-center">
+      <p >Create a new list</p>
+      <p class="btn btn-dark "><%= link_to 'New', new_list_path, class: "text-decoration-none text-info bg-dark" %></p>
+      </div>
 
-<h2>ALL LISTS</h2>
-<% @lists.each do |list| %>
-        <%= link_to list_path(list), class: "text-decoration-none" do %>
-          <%= list.name %>
+    <div class="col-12 p-4">
+      <div class="container border border-dark text-center rounded pb-3">
+        <p class=" badge bg-dark p-3 mt-5"style="width: 8rem;">ALL LISTS</p>
+          <% @lists.each do |list| %>
+          <div class="row">
+            <div class="col-3 border border-dark bg-dark rounded text-center p-3 m-3">
+              <%= link_to list_path(list), class: "text-decoration-none text-info bg-dark" do %>
+              <p>Name : <%= list.name %></p>
+              <p>Number of movies : <%= list.movies.count %></p>
+              <% end %>
+            </div>
+          </div>
         <% end %>
-    <% end %>
+      </div>
+    </div>
+  </div>
+</div>
